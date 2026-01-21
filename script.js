@@ -683,23 +683,37 @@ function initRoleFilter() {
         filterSelect.appendChild(option);
     });
 
+    // Restore saved filter from localStorage
+    const savedFilter = localStorage.getItem('selectedRole');
+    if (savedFilter) {
+        filterSelect.value = savedFilter;
+        // Apply the filter immediately
+        applyRoleFilter(savedFilter);
+    }
+
     // Handle change
     filterSelect.addEventListener('change', (e) => {
         const selectedRole = e.target.value;
-        const cards = document.querySelectorAll('.role-card');
+        applyRoleFilter(selectedRole);
+        // Save to localStorage
+        localStorage.setItem('selectedRole', selectedRole);
+    });
+}
 
-        cards.forEach(card => {
-            if (selectedRole === 'all') {
+// Helper function to apply role filter
+function applyRoleFilter(selectedRole) {
+    const cards = document.querySelectorAll('.role-card');
+    cards.forEach(card => {
+        if (selectedRole === 'all') {
+            card.style.display = 'block';
+        } else {
+            if (card.id === `role-${selectedRole}`) {
                 card.style.display = 'block';
+                card.scrollIntoView({ behavior: 'smooth', block: 'start' });
             } else {
-                if (card.id === `role-${selectedRole}`) {
-                    card.style.display = 'block';
-                    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                } else {
-                    card.style.display = 'none';
-                }
+                card.style.display = 'none';
             }
-        });
+        }
     });
 }
 
