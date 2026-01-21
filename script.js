@@ -752,9 +752,16 @@ async function initApp() {
         rolesContainer.appendChild(warning);
     }
 
+    // Get saved role filter BEFORE rendering
+    const savedRoleFilter = localStorage.getItem('selectedRole') || 'all';
+
     // Render all role cards first (UI renders immediately)
     for (const role of rolesData) {
         const roleCard = createRoleCard(role);
+        // Apply filter immediately during render (no flash)
+        if (savedRoleFilter !== 'all' && role.id !== savedRoleFilter) {
+            roleCard.style.display = 'none';
+        }
         rolesContainer.appendChild(roleCard);
     }
 
