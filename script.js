@@ -136,6 +136,21 @@ function setupTabNavigation() {
     const tabs = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
 
+    // Restore saved tab from localStorage
+    const savedTab = localStorage.getItem('activeTab');
+    if (savedTab) {
+        const savedTabBtn = document.querySelector(`.tab-btn[data-tab="${savedTab}"]`);
+        const savedTabContent = document.getElementById(savedTab);
+        if (savedTabBtn && savedTabContent) {
+            // Deactivate default active tab
+            tabs.forEach(t => t.classList.remove('active'));
+            tabContents.forEach(c => c.classList.remove('active'));
+            // Activate saved tab
+            savedTabBtn.classList.add('active');
+            savedTabContent.classList.add('active');
+        }
+    }
+
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             // Deactivate all tabs and contents
@@ -149,6 +164,9 @@ function setupTabNavigation() {
             if (targetContent) {
                 targetContent.classList.add('active');
             }
+
+            // Save active tab to localStorage
+            localStorage.setItem('activeTab', targetId);
         });
     });
 }
