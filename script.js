@@ -742,10 +742,10 @@ async function initApp() {
                 const messagesContainer = document.getElementById(`messages-${role.id}`);
 
                 if (checklistContainer) {
-                    checklistContainer.innerHTML = `<p class="empty-text" style="color: #e74c3c;">Error memuat data.</p>`;
+                    checklistContainer.innerHTML = `<p class="empty-text" style="color: var(--accent-color);">Error memuat data.</p>`;
                 }
                 if (messagesContainer) {
-                    messagesContainer.innerHTML = `<p class="empty-text" style="color: #e74c3c;">Error memuat data.</p>`;
+                    messagesContainer.innerHTML = `<p class="empty-text" style="color: var(--accent-color);">Error memuat data.</p>`;
                 }
             }
         }
@@ -764,8 +764,35 @@ async function initApp() {
         }
     }
 
+    // Theme Toggle Logic
+    function initTheme() {
+        const themeBtn = document.getElementById('theme-btn');
+        const html = document.documentElement;
+
+        // Check saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            html.setAttribute('data-theme', 'dark');
+            themeBtn.textContent = '☀️';
+        }
+
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                html.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                themeBtn.textContent = '🌙';
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeBtn.textContent = '☀️';
+            }
+        });
+    }
+
     // Initialize Role Filter
     initRoleFilter();
+    initTheme();
 
     console.log("[App] Initialization complete");
 }
