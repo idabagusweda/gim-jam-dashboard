@@ -1,0 +1,897 @@
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --primary-color: #4a90e2;
+    --primary-hover: #357abd;
+    --accent-color: #e74c3c;
+    --border-color: #ddd;
+    --success-color: #27ae60;
+    --text-muted: #666;
+
+    --radius: 8px;
+    --shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-bottom: 50px;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header & Nav */
+header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #2c3e50;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    border-bottom: 2px solid var(--bg-color);
+    padding-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: #34495e;
+}
+
+.tab-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: white;
+    border: 1px solid var(--border-color);
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+    color: var(--text-muted);
+}
+
+.tab-btn:hover {
+    background: #eef2f7;
+}
+
+.tab-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 6px rgba(74, 144, 226, 0.2);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Cards */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+}
+
+/* Lists */
+.static-list {
+    list-style-position: inside;
+    padding-left: 10px;
+}
+
+.static-list li {
+    margin-bottom: 8px;
+}
+
+/* Timeline */
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.day-badge {
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    min-width: 80px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Team Grid */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.team-member h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.team-member p {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Role & Tasks (Dynamic) */
+.roles-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.role-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.role-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 15px 20px;
+}
+
+.role-header h2 {
+    color: white;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.role-header p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+.role-body {
+    padding: 20px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.btn-add {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background 0.2s;
+}
+
+.btn-add:hover {
+    background: var(--primary-hover);
+}
+
+/* Checklist Items */
+.checklist-container {
+    margin-bottom: 30px;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.checklist-item:hover {
+    background: #f9f9f9;
+}
+
+.checklist-checkbox {
+    margin-top: 5px;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.checklist-text {
+    flex: 1;
+    font-size: 0.95rem;
+}
+
+.checklist-item.done .checklist-text {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.btn-icon {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #999;
+    padding: 2px;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.btn-icon:hover {
+    color: var(--accent-color);
+}
+
+/* Messages */
+.message-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message-item {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 3px solid var(--primary-color);
+    position: relative;
+}
+
+.message-text {
+    white-space: pre-wrap;
+    font-size: 0.95rem;
+    margin-right: 25px;
+    /* space for buttons */
+}
+
+.message-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+/* Inputs & Forms (Simple Modal/Prompt replacement) */
+/* We will use simple prompt/confirm for now, or build small inline forms if needed. 
+   For better UX, let's style simple inline inputs if we decide to use them.
+*/
+
+/* Helper */
+.loading-text {
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+    padding: 20px;
+}
+
+/* Config Warning */
+.config-warning {
+    background: #fff3cd;
+    color: #856404;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ffc107;
+    line-height: 1.6;
+}
+
+.config-warning code {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+/* Empty State Text */
+.empty-text {
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+    padding: 10px 0;
+}
+
+@media (max-width: 600px) {
+    .timeline-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .day-badge {
+        width: 100%;
+        text-align: left;
+    }
+
+    .tab-btn {
+        flex: 1;
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+}
+
+/* Tambahan Styles untuk Fitur Baru */
+
+/* Garis Pembatas */
+.divider {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 25px 0;
+}
+
+/* GitHub Section */
+.github-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #24292e;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.github-icon {
+    width: 32px;
+    height: 32px;
+    fill: white;
+    flex-shrink: 0;
+}
+
+.github-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.github-label {
+    font-size: 0.85rem;
+    color: #b0b0b0;
+    margin-bottom: 2px;
+}
+
+.github-link {
+    color: #58a6ff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    word-break: break-all;
+}
+
+.github-link:hover {
+    text-decoration: underline;
+}
+
+/* Floating Discord Button */
+.discord-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #5865F2;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(88, 101, 242, 0.4);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1000;
+    text-decoration: none;
+}
+
+.discord-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 14px rgba(88, 101, 242, 0.6);
+    background-color: #4752c4;
+}
+
+.discord-icon {
+    width: 32px;
+    height: 32px;
+    fill: white;
+}
+
+/* Responsive adjustment for floating button */
+@media (max-width: 600px) {
+    .discord-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .discord-icon {
+        width: 26px;
+        height: 26px;
+    }
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.open {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.modal-overlay.open .modal-content {
+    transform: translateY(0);
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    border-bottom: none;
+}
+
+#modal-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+    margin-bottom: 20px;
+    transition: border-color 0.2s;
+}
+
+#modal-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn-cancel,
+.btn-submit {
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    border: none;
+    transition: background 0.2s;
+}
+
+.btn-cancel {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.btn-cancel:hover {
+    background: #d0d0d0;
+}
+
+.btn-submit {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-submit:hover {
+    background: var(--primary-hover);
+}
+
+/* Editable Member Name */
+.role-member-container {
+    font-size: 0.9em;
+    font-weight: normal;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: opacity 0.2s, background-color 0.2s;
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.role-member-container:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.role-member-name {
+    text-decoration-style: dotted;
+    text-decoration-line: underline;
+    text-underline-offset: 4px;
+}
+
+.role-member-name.filled {
+    font-weight: bold;
+    color: #ffd700;
+    /* Gold color to highlight assigned members */
+    text-decoration: none;
+}
+
+.edit-icon {
+    font-size: 0.8em;
+    opacity: 0.5;
+}
+
+.role-member-container:hover .edit-icon {
+    opacity: 1;
+}
+
+/* Flowchart Timeline */
+.flowchart-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 10px 0;
+}
+
+@media (min-width: 900px) {
+    .flowchart-container {
+        flex-direction: row;
+        align-items: stretch;
+        padding-bottom: 20px;
+    }
+}
+
+.flow-step {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex: 1;
+    min-width: 250px;
+    /* Allow steps to shrink if needed, but prefer min-width */
+    flex: 1 1 200px;
+}
+
+/* Arrow between steps (Desktop) */
+@media (min-width: 900px) {
+    .flow-step:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        right: -35px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23999'%3E%3Cpath d='M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z'%3E%3C/path%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        z-index: 1;
+        opacity: 0.6;
+    }
+}
+
+/* Arrow between steps (Mobile) */
+@media (max-width: 899px) {
+    .flow-step:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        bottom: -35px;
+        left: 50%;
+        transform: translateX(-50%) rotate(90deg);
+        width: 30px;
+        height: 30px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23999'%3E%3Cpath d='M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z'%3E%3C/path%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        color: #999;
+    }
+
+    .flowchart-container {
+        gap: 50px;
+        /* More gap for arrow */
+    }
+}
+
+.flow-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+}
+
+.flow-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.flow-title {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+}
+
+.flow-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.flow-list li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.flow-target {
+    background: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #1b5e20;
+    margin-top: auto;
+}
+
+/* Styled Header for Info Umum and others */
+.card.no-padding {
+    padding: 0;
+    overflow: hidden;
+    /* Ensure header corners are clipped */
+}
+
+.card-header-styled {
+    background: var(--primary-color);
+    color: white;
+    padding: 20px;
+}
+
+.card-header-styled h2 {
+    color: white;
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+}
+
+.card-body-padded {
+    padding: 20px;
+}
+
+/* Role Filter */
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.filter-container label {
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+#role-filter {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    background-color: white;
+    cursor: pointer;
+    flex: 1;
+    max-width: 300px;
+}
+
+#role-filter:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+@media (max-width: 600px) {
+    .filter-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #role-filter {
+        max-width: 100%;
+    }
+}
+
+/* Dashboard Polish */
+
+/* Subtitle */
+.subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-top: -10px;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+/* Tab Navigation Refinement */
+.tab-btn {
+    border: none;
+    border-bottom: 3px solid transparent;
+    border-radius: 0;
+    padding: 10px 20px;
+    background: transparent;
+    font-weight: 500;
+}
+
+.tab-btn:hover {
+    background: rgba(0, 0, 0, 0.03);
+    border-bottom: 3px solid #ddd;
+}
+
+.tab-btn.active {
+    background: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: none;
+    font-weight: bold;
+}
+
+/* Helper Text */
+.section-helper {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+/* Refined Role Card with Blue Header */
+.role-card {
+    /* border-top: 4px solid var(--primary-color); Removed top border as header is now blue */
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    /* Softer shadow */
+}
+
+.role-header {
+    background: var(--primary-color);
+    /* Blue background like Timeline */
+    color: white;
+    border-bottom: none;
+    padding: 20px;
+}
+
+.role-header h2 {
+    color: white;
+}
+
+.role-header p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.role-member-container {
+    background: rgba(255, 255, 255, 0.2);
+    /* Semi-transparent white */
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    color: white;
+}
+
+.role-member-container:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.role-member-name.filled {
+    color: #ffd700;
+    /* Gold for filled name */
+    font-weight: bold;
+}
+
+/* Checklist Progress */
+.checklist-progress {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-left: 10px;
+    font-weight: normal;
+}

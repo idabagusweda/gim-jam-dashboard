@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koordinasi Tim Game Jam</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Koordinasi Tim Game Jam</h1>
+            <p class="subtitle">Dashboard internal untuk tracking tugas & progres tim Game Jam</p>
+            <nav class="tab-nav">
+                <button class="tab-btn active" data-tab="info">Info Umum</button>
+                <button class="tab-btn" data-tab="timeline">Timeline</button>
+                <button class="tab-btn" data-tab="roles">Role & Tugas</button>
+            </nav>
+        </header>
+
+        <main>
+            <!-- TAB: INFO UMUM -->
+            <section id="info" class="tab-content active">
+                <div class="card no-padding">
+                    <div class="card-header-styled">
+                        <h2>INFO UMUM</h2>
+                    </div>
+                    <div class="card-body-padded">
+                        <h3>Apa fungsi web ini?</h3>
+                        <p>Web ini digunakan sebagai dashboard internal tim selama Game Jam. Fokus utama web ini adalah
+                            tracking tugas dan status per role, bukan sebagai alat komunikasi utama.</p>
+
+                        <h3>Cara Menggunakan Web Ini (Step-by-Step)</h3>
+                        <ol style="margin-left: 20px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 10px;">
+                                <strong>Cek tugas masing-masing role</strong><br>
+                                Masuk ke tab Role & Tugas, lalu buka role kamu. Di sana ada checklist dan catatan tugas
+                                yang
+                                harus dikerjakan.
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <strong>Update progres lewat checklist</strong><br>
+                                Centang checklist saat tugas sudah dikerjakan. Tambahkan checklist baru jika ada tugas
+                                tambahan yang relevan dengan role tersebut.
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <strong>Gunakan message hanya untuk penekanan singkat</strong><br>
+                                Message digunakan untuk:
+                                <ul style="margin-left: 20px; list-style-type: disc;">
+                                    <li>reminder</li>
+                                    <li>status singkat</li>
+                                    <li>catatan penting</li>
+                                </ul>
+                                Bukan untuk diskusi panjang.
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <strong>Semua komunikasi utama tetap lewat Discord</strong><br>
+                                Diskusi, tanya jawab, brainstorming, dan koordinasi harian WAJIB dilakukan di Discord,
+                                bukan
+                                di web ini.
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <strong>Sharing file & materi TIDAK lewat web ini</strong><br>
+                                Semua file seperti:
+                                <ul style="margin-left: 20px; list-style-type: disc;">
+                                    <li>asset</li>
+                                    <li>script</li>
+                                    <li>program</li>
+                                    <li>dokumen</li>
+                                </ul>
+                                dibagikan melalui Discord atau GitHub, bukan melalui message di web ini.
+                            </li>
+                        </ol>
+
+                        <h3>Penekanan Penting</h3>
+                        <ul class="static-list">
+                            <li>Web ini = tracking & transparansi progres</li>
+                            <li>Discord = komunikasi & diskusi</li>
+                            <li>GitHub = kode & file proyek</li>
+                        </ul>
+                        <p>Gunakan masing-masing sesuai fungsinya agar kerja tim tetap rapi dan efisien.</p>
+
+                        <hr class="divider">
+
+                        <h3>Repository GitHub</h3>
+                        <div class="github-section">
+                            <svg class="github-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                height="24">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                                    fill="currentColor" />
+                            </svg>
+                            <div class="github-text">
+                                <span class="github-label">Repo utama proyek (wajib clone dan push ke repo ini):</span>
+                                <a href="https://github.com/idabagusweda/lomba-gimjam.git" target="_blank"
+                                    class="github-link">https://github.com/idabagusweda/lomba-gimjam.git</a>
+                            </div>
+                        </div>
+
+                        <h3>Discord Tim</h3>
+                        <p>Gunakan Discord sebagai komunikasi utama.</p>
+                        <p>Klik ikon Discord di pojok kanan bawah untuk masuk ke server tim.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Floating Discord Button -->
+            <a href="https://discord.gg/invite-code" target="_blank" class="discord-float" title="Join Discord">
+                <svg class="discord-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
+                    <path
+                        d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.772-.6083 1.1588a18.2915 18.2915 0 00-5.4882 0 12.642 12.642 0 00-.6172-1.1588.0705.0705 0 00-.0785-.0371 19.7363 19.7363 0 00-4.8852 1.5151.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1892.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.1023.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.419-2.1569 2.419zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.419-2.1568 2.419z"
+                        fill="white" />
+                </svg>
+            </a>
+
+            <!-- TAB: TIMELINE -->
+            <section id="timeline" class="tab-content">
+                <div class="flowchart-container">
+                    <!-- Step 1 -->
+                    <div class="flow-step">
+                        <div class="flow-header">Hari 0–1</div>
+                        <div class="flow-body">
+                            <h3 class="flow-title">Penentuan Arah</h3>
+                            <ul class="flow-list">
+                                <li>Tema diumumkan</li>
+                                <li>Menentukan scope final (apa yang dibuat & apa yang TIDAK dibuat)</li>
+                                <li>Core gameplay sudah bisa dimainkan, meskipun masih sangat sederhana</li>
+                            </ul>
+                            <div class="flow-target">
+                                <strong>Target:</strong> game sudah “hidup”, bukan masih konsep
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flow-step">
+                        <div class="flow-header">Hari 2–3</div>
+                        <div class="flow-body">
+                            <h3 class="flow-title">Stabilisasi Gameplay</h3>
+                            <ul class="flow-list">
+                                <li>Gameplay distabilkan (kontrol, aturan main, alur)</li>
+                                <li>Art dan audio mulai diintegrasikan</li>
+                                <li>Game sudah bisa dimainkan dari awal sampai akhir</li>
+                            </ul>
+                            <div class="flow-target">
+                                <strong>Target:</strong> ada game utuh, walau belum cantik
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flow-step">
+                        <div class="flow-header">Hari 4–5</div>
+                        <div class="flow-body">
+                            <h3 class="flow-title">Polish & Penyempurnaan</h3>
+                            <ul class="flow-list">
+                                <li>Fokus ke polish (feel bermain, visual clarity, audio feedback)</li>
+                                <li>Buang fitur yang tidak penting</li>
+                                <li>Perbaiki rasa bermain (game feel)</li>
+                            </ul>
+                            <div class="flow-target">
+                                <strong>Target:</strong> game terasa enak dimainkan, bukan sekadar jalan
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="flow-step">
+                        <div class="flow-header">Hari 6</div>
+                        <div class="flow-body">
+                            <h3 class="flow-title">Finalisasi</h3>
+                            <ul class="flow-list">
+                                <li>Bug fixing (prioritas bug besar)</li>
+                                <li>Finalisasi visual, audio, dan credits</li>
+                                <li>Rekam video highlight</li>
+                            </ul>
+                            <div class="flow-target">
+                                <strong>Target:</strong> tidak ada perubahan besar setelah hari ini
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="flow-step">
+                        <div class="flow-header">Hari 7</div>
+                        <div class="flow-body">
+                            <h3 class="flow-title">Submission</h3>
+                            <ul class="flow-list">
+                                <li>Build final</li>
+                                <li>Upload ke itch.io</li>
+                                <li>Submit game</li>
+                            </ul>
+                            <div class="flow-target">
+                                <strong>Target:</strong> submit tepat waktu, bukan sempurna tapi terlambat
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB: ROLE & TUGAS -->
+            <section id="roles" class="tab-content">
+                <p class="section-helper">Pilih role untuk fokus mengerjakan tugas atau lihat semua role untuk overview.
+                </p>
+                <div class="filter-container">
+                    <label for="role-filter">Tampilkan:</label>
+                    <select id="role-filter">
+                        <option value="all">Semua Role</option>
+                        <!-- Options will be populated by JS -->
+                    </select>
+                </div>
+                <div id="roles-container" class="roles-grid">
+                    <!-- Dynamic Content will be injected here by script.js -->
+                    <p class="loading-text">Memuat data role...</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Firebase SDK (compat version for file:// protocol support) -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+    <!-- Main Logic (regular script, not module) -->
+    <script src="script.js"></script>
+    <!-- Custom Input Modal -->
+    <div id="input-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h3 id="modal-title">Input</h3>
+            <textarea id="modal-input" rows="4" placeholder="Ketik di sini..."></textarea>
+            <div class="modal-actions">
+                <button id="modal-cancel-btn" class="btn-cancel">Batal</button>
+                <button id="modal-submit-btn" class="btn-submit">Simpan</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
